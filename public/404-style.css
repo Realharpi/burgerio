@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.message {
+    text-align: center;
+    padding: 5rem;
+    height: 81vh;
+    color: tomato;
+    font-size: x-large;
+}
+
+.message img {
+    padding: 2rem;
+}
+
+.message p{
+    padding: .25rem;
+}

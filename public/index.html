@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Burgerio - Best Burgers in the world</title>
+
+        <link rel="stylesheet" href="styles.css">
+        <link rel="shortcut icon" href="images/burgerio-ico.ico" type="image/x-icon">
+
+        <!-- Icon link from "awesome font" -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+        <!-- Google Maps -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    </head>
+
+    <body>
+        <preloader class="loader_container loading">
+            <div class="loader">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </preloader>
+
+        <header>
+            <nav>
+                <!-- Logo -->
+                <div class="logo">
+                    <a href="#"><img src="images/burgerio-ico.png" alt="logo"></a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search_bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="searchInput" placeholder="Search for Burgers...">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+
+                <!-- Dark Mode -->
+                <div class="toggle_dl toggle_daynight">
+                    <input type="checkbox" id="toggle_daynight" class="toggle_checkbox">
+                    <label class="toggle_btn" for="toggle_daynight"><span class="toggle_feature"></span></label>
+                </div>
+
+                <!-- Hamburger Menu -->
+                <div id="menuToggle" class="menu_button">
+                    <input type="checkbox" class="menuCheckbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <li><a href="#burgers-section">Menu</a></li>
+                        <li><a href="#drinks-section">Drinks</a></li>
+                        <li><a href="#countdown-section">Specials</a></li>
+                        <li><a href="#reservations">Reservations</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#news-events">News & Events</a></li>
+                        <li><a href="#map-section">Find Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#career">Career</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Mini Nav or Sub Nav -->
+            <mininav>
+                <div id="subtopnav" onmousedown="startscrolling_subtopnav(event)" onmousemove="scrolling_subtopnav(event)"
+                    onmouseup="endscrolling_subtopnav(event)" onclick="return pellessii(event)">
+                
+                    <!-- List of Links -->
+                    <a href="#burgers-section">Menu</a>
+                    <a href="#drinks-section">Drinks</a>
+                    <a href="#countdown-section">Specials</a>
+                    <a href="#reservations">Reservations</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#news-events">News & Events</a>
+                    <a href="#map-section">Find Us</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#career">Career</a>
+
+                    <!-- Left Button -->
+                    <div id="left_btn" >
+                        <span onmousedown="scrollmenow(-1)" onmouseup="stopscrollmenow()" onmouseout="stopscrollmenow()" onclick="scrollLeftClick()">&nbsp;&nbsp;&nbsp;❮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                
+                    <!-- Right button -->
+                    <div id="right_btn" >
+                        <span onmousedown="scrollmenow(1)" onmouseup="stopscrollmenow()" onmouseout="stopscrollmenow()" onclick="scrollRightClick()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;&nbsp;&nbsp;</span>
+                    </div>
+                </div>
+            </mininav>
+        </header>
+
+        <main>
+            <section class="slideshow_section">
+                <div class="slideshow_header">
+                    <h3><a href="#countdown_section">Limited-Time Savings:</a> Don't Miss Out!</h3>
+                </div>
+
+                <div class="slider_container">
+                    <div class="image_slider">
+                        <div class="image_item">
+                            <img src="images/burgerio0.jpg" alt="">
+                        </div>
+                        <div class="image_item">
+                            <img src="images/burgerio1.jpg" alt="">
+                        </div>
+                        <div class="image_item">
+                            <img src="images/burgerio2.jpg" alt="">
+                        </div>
+                        <div class="image_item">
+                            <img src="images/burgerio3.jpg" alt="">
+                        </div>
+                    </div>
+
+                    <div class="touch_slider"></div>
+
+                    <div class="slider_text">
+                        <h1>Meal of the day!</h1>
+                        <p>Tasty & Authentic</p>
+                        <button><a href="#burgers_section">Browse</a></button>
+                    </div>
+
+                    <div class="slider_buttons">
+                        <div class="back_arrow"><i class="fa-solid fa-chevron-left"></i></div>
+
+                        <div class="slideshow_counter">
+                            <span class="slideshow_counter_current">1</span>
+                            <span> / </span>
+                            <span class="slideshow_counter_total">4</span>
+                        </div>
+
+                        <div class="next_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                </div>
+
+                <div class="info_container">
+                    <div id="info_iicontainer" onmousedown="startscrolling_info_iicontainer(event)" onmousemove="scrolling_info_iicontainer(event)"
+                        onmouseup="endscrolling_info_iicontainer(event)" onclick="return pellessii_info_iicontainer(event)">
+                
+                        <!-- List of box items -->
+                        <div class="info_box">
+                            <div class="delivery_box"><svg width="40" height="40" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M14.41 3.37L8.27 1.41a1 1 0 00-.61 0L1.52 3.37a1 1 0 00-.7.95v7.86c0 .41.25.78.63.93l6.14 2.46c.24.1.5.1.75 0l6.14-2.46a1 1 0 00.62-.93V4.32a1 1 0 00-.69-.95zM7.96 2.36l6.05 1.93-2.7.9L5.35 3.2l2.63-.84zm-.46 12.1l-5.68-2.28V5.3L7.5 7.2v7.26zM8 6.3L1.96 4.28l2.58-.82 5.99 2L8 6.3zm6.1 5.89l-5.6 2.24V7.19l5.6-1.87v6.87z">
+                                    </path>
+                                </svg></div>
+                            <div class="box_text">
+                                <h3>Free Delivery</h3>
+                                <h4>On all orders over $50</h4>
+                            </div>
+                        </div>
+                        <div class="info_box">
+                            <div class="fresh_box"><svg width="40" height="40" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M14.63.98a1 1 0 00-.78-.3h-.03l-.07.01-.25.03a41.89 41.89 0 00-3.87.52c-1.1.2-2.31.48-3.38.83a7.15 7.15 0 00-2.74 1.48 6.04 6.04 0 00-.36 8.15L1.53 13.3a.5.5 0 00.71.7l1.61-1.6a6.04 6.04 0 008.2-.31 7.15 7.15 0 001.48-2.74c.36-1.07.63-2.27.83-3.39a46.92 46.92 0 00.53-3.86l.02-.26.01-.07v-.02a1 1 0 00-.29-.78zm-1.72.8l.17-.02-4.89 4.9v-4.1c1.76-.41 3.61-.66 4.72-.78zM8.45 7.81h4.5c-.21.8-.45 1.56-.74 2.2H6.24l2.21-2.2zM7.7 2.68v4.46L5.5 9.35V3.43c.64-.3 1.4-.54 2.2-.75zM4.22 4.26c.2-.2.47-.4.78-.57v6.15L3.86 11a5.04 5.04 0 01.36-6.73zm.34 7.44l1.19-1.18h6.22c-.2.35-.4.65-.62.87a5.04 5.04 0 01-6.8.31zm8.5-4.4h-4.1l4.9-4.9-.03.3a41.1 41.1 0 01-.76 4.6z">
+                                    </path>
+                                </svg></div>
+                            <div class="box_text">
+                                <h3>Freshness Guarantee</h3>
+                                <h4>From farm to fork</h4>
+                            </div>
+                        </div>
+                        <div class="info_box">
+                            <div class="checkout_box"><svg width="40" height="40" viewBox="0 0 16 16">
+                                    <circle stroke="currentColor" fill="none" cx="8" cy="8" r="6.6666665"></circle>
+                                    <path stroke="currentColor" fill="none" transform="translate(5.0003335,6.0003335)"
+                                        d="m 6,0 -4,4 L 0,2.1818182"></path>
+                                </svg></div>
+                            <div class="box_text">
+                                <h3>Quick Checkout</h3>
+                                <h4>Fill your basket faster</h4>
+                            </div>
+                        </div>
+                        <div class="info_box">
+                            <div class="price_box"><svg width="40" height="40" viewBox="0 0 16 16">
+                                    <path fill="currentColor"
+                                        d="M7.59 1.34a1 1 0 01.7-.29h5.66a1 1 0 011 1v5.66a1 1 0 01-.3.7L7.6 15.5a1 1 0 01-1.42 0L.52 9.83a1 1 0 010-1.42l7.07-7.07zm6.36 6.37l-7.07 7.07-5.66-5.66L8.3 2.05h5.66v5.66z"
+                                        fill-rule="evenodd"></path>
+                                    <path fill="currentColor"
+                                        d="M9.7 6.3a1 1 0 101.42-1.42 1 1 0 00-1.41 1.41zM9 7a2 2 0 102.83-2.83A2 2 0 009 7z"
+                                        fill-rule="evenodd"></path>
+                                </svg></div>
+                            <div class="box_text">
+                                <h3>Unbeatable Price</h3>
+                                <h4>Best price in the market</h4>
+                            </div>
+                        </div>
+                
+                        <!-- Left Button -->
+                        <div id="left_btn_info">
+                            <span onmousedown="scroll_info(-1)" onmouseup="stopscroll_info()" onmouseout="stopscroll_info()" onclick="scrollLeftInfo()">&nbsp;&nbsp;&nbsp;❮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                
+                        <!-- Right button -->
+                        <div id="right_btn_info">
+                            <span onmousedown="scroll_info(1)" onmouseup="stopscroll_info()" onmouseout="stopscroll_info()" onclick="scrollRightInfo()">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;❯&nbsp;&nbsp;&nbsp;</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="burgers_section">
+                <h2>The Burger Bar</h2>
+                <p class="subTitleBurgers">Our custom beef blend is fresh, never frozen and raised without antibiotics or added hormones</p>
+                <div class="burgers_container">
+
+                    <div class="burgers_item">
+                        <img src="images/burgers1.png" alt="" />
+                        <div class="burgerSelected">
+                            <img src="images/check.png" alt="">
+                        </div>
+                        <div class="burgers_text">
+                            <p>Whopper</p>
+                        </div>
+                    </div>
+
+                    <div class="burgers_item">
+                        <img src="images/burgers2.png" alt="" />
+                        <div class="burgerSelected">
+                            <img src="images/check.png" alt="">
+                        </div>
+                        <div class="burgers_text">
+                            <p>Whopper with Cheese</p>
+                        </div>
+                    </div>
+
+                    <div class="burgers_item">
+                        <img src="images/burgers3.png" alt="" />
+                        <div class="burgerSelected">
+                            <img src="images/check.png" alt="">
+                        </div>
+                        <div class="burgers_text">
+                            <p>Double Whopper</p>
+                        </div>
+                    </div>
+
+                    <div class="burgers_item">
+                        <img src="images/burgers4.png" alt="" />
+                        <div class="burgerSelected">
+                            <img src="images/check.png" alt="">
+                        </div>
+                        <div class="burgers_text">
+                            <p>Chicken with Bacon</p>
+                        </div>
+                    </div>
+
+                    <div class="burgers_item">
+                        <img src="images/burgers5.png" alt="" />
+                        <div class="burgerSelected">
+                            <img src="images/check.png" alt="">
+                        </div>
+                        <div class="burgers_text">
+                            <p>Bacon</p>
+                        </div>
+                    </div>
+
+                    <div class="burgers_item">
+                        <img src="images/burgers6.png" alt="" />
+                        <div class="burgerSelected">
+                            <img src="images/check.png" alt="">
+                        </div>
+                        <div class="burgers_text">
+                            <p>Fish</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="drinks_section">
+                <div class="drinks_container">
+                    <div class="drinks_header">
+                        <h2>Uncork Your Happiness!</h2>
+                    </div>
+
+                    <div class="drinks_slider">
+                        <div class="drinks_item">
+                            <img src="images/drinks1.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks2.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks3.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks4.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks5.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks6.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks7.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks8.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks9.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks1.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks2.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                        <div class="drinks_item">
+                            <img src="images/drinks3.png" alt="">
+                            <div class="drinkSelected">
+                                <img src="images/check.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="drinks_touch_slider"></div>
+
+                    <div class="drinks_buttons">
+                        <div class="back_arrow"><i class="fa-solid fa-chevron-left"></i></div>
+                        <div class="next_arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    </div>
+                    <div class="dnldApp">
+                        <p>Get a free drink with your order when you download our app!</p>
+                        <img src="images/google-store.png" alt="Play Store">
+                        <img src="images/apple-store.svg" alt="Apple Store">
+                    </div>
+                </div>
+            </section>
+
+            <section id="countdown_section">
+                <div class="countdown_container">
+                    <div class="countdown_text">
+                        <h3>Savings Alert</h3>
+                        <h1>Calling All Foodies!</h1>
+                        <p class="para1">Ditch the diet, embrace the delight!</br>Indulge in delicious deals. Up to
+                            <span>50% OFF</span> burgers, pizzas, and more. Don't let these savings go cold!
+                        </p>
+                        <p class="para2">Time is ticking!</p>
+                    </div>
+                    <div class="clock"></div>
+                </div>
+            </section>
+
+            <section class="googleMaps_section" id="map_section">
+                <div class="maps_text">
+                    <h2>Find us</h2>
+                    <p class="subheader"><i class="fa-solid fa-phone"></i>Phone</p>
+                    <p>+16477997993</p>
+
+                    <p class="subheader"><i class="fa-solid fa-envelope"></i>Email</p>
+                    <p>Harpiwarrach@gmail.com</p>
+
+                    <p class="subheader"><i class="fa-solid fa-location-dot"></i>Our Location</p>
+                    <p>1919 Yonge St, Toronto, ON M4S 1Z3, Canada</p>
+                </div>
+
+                <div id="googleMaps"></div>
+            </section>
+
+            <section id="contact">
+                <div class="contact_form">
+                    <h2>Get In Touch</h2>
+                    <form action="https://sheetdb.io/api/v1/m6sojzx1s5a67" method="post" id="sheetdb-form">
+                        <div>
+                            <input type="text" id="name" name="data[Name]" placeholder="Full Name" required>
+                            <input type="email" id="email" name="data[Email]" placeholder="Email" required>
+                            <input type="hidden" name="data[Form]" value="Burgerio">
+                        </div>
+                        <textarea id="message" name="data[Message]" rows="5" placeholder="Type your message here"
+                            required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="section_modal">
+                <div class="backdrop"></div> <!-- Back Screen -->
+                <div class="modaldrop">
+                    <!-- I put the Modal in this 'modaldrop, only to always keep the modal centered when screen resolution is changed. -->
+                    <div class="modal done"> <!-- Modal -->
+                        <p class="done_icon"><i class="fa-solid fa-envelope"></i></p>
+                        <h1 class="done_title">Message Sent!</h1>
+                        <h4>Thank You for sending a message.</br>I will get back to you as soon as possible.</h4>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BTT button = Back to Top -->
+            <button class="BTT" type="button"><img src="images/BTT.png" alt=""></button>
+        </main>
+
+        <footer>
+            <div class="footer_container">
+                <div class="footer_info">
+                    <div class="fInfoItem">
+                        <h2>Order</h2>
+                        <ul>
+                            <li><a href="#Deal">Deals</a></li>
+                            <li><a href="">Burgers</a></li>
+                            <li><a href="">Pizzas</a></li>
+                            <li><a href="">Drinks</a></li>
+                        </ul>
+                    </div>
+                    <div class="fInfoItem">
+                        <h2>Nutrition</h2>
+                        <ul>
+                            <li><a href="#">Nutrition Information</a></li>
+                            <li><a href="#">Food Allergen & Sensitivity</a></li>
+                            <li><a href="#">Ingredient Listing</a></li>
+                            <li><a href="#">Gluten Free</a></li>
+                        </ul>
+                    </div>
+                    <div class="fInfoItem">
+                        <h2>Service</h2>
+                        <ul>
+                            <li><a href="#">FAQs & Help</a></li>
+                            <li><a href="#">Gift Cards</a></li>
+                            <li><a href="#">Careers</a></li>
+                            <li><a href="#">Program</a></li>
+                        </ul>
+                    </div>
+                    <div class="fInfoItem">
+                        <h2>Policies</h2>
+                        <ul>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Disclosure</a></li>
+                            <li><a href="#">Cookies & Ads</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <h3>Follow us</h3>
+                <div class="share">
+                    <a href="tel:+16477997993" class="icon fa-solid fa-phone"></a>
+                    <a href="mailto:harpiwarrach@gmail.com" class="icon fa-regular fa-envelope"></a>
+                    <a href="https://www.linkedin.com/in/harpi01/" class="icon fab fa-linkedin"></a>
+                    <a href="https://www.instagram.com/" class="icon fab fa-instagram"></a>
+                </div>
+                <p class="foop">&copy; <span id="currentYear"></span> Harpinder. All rights reserved.</p>
+            </div>
+        </footer>
+
+        <!-- jQuery link from 'Google API libraries' -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+        <!-- Script for Google Maps  --> <!-- Insert your API Key here   Y -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWaMdCrqtAIhDKE61VCDfqtTpevddSr9Y&callback=initMap" async defer></script>
+
+        <script src="app.js"></script>
+        <script src="BTT_jQ.js"></script>      <!-- jQuery Script for the Back To Top Button -->
+    </body>
+
+</html>

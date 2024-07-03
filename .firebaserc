@@ -1,0 +1,16 @@
+{
+  "projects": {
+    "default": "harpi-portfolio"
+  },
+  "targets": {
+    "harpi-portfolio": {
+      "hosting": {
+        "burgerio": [
+          "burgerio"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
