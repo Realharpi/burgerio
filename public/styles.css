@@ -1036,6 +1036,11 @@ border-radius: .35rem;
 
 @media(max-width:800px) {
 
+  #burgers_section {
+    height: fit-content;
+    padding: 5rem 0 7rem 0;
+  }
+
   .burgers_container {
     grid-template-columns: repeat(2, 1fr);
     width: 85%;
@@ -1055,11 +1060,6 @@ border-radius: .35rem;
 }
 
 @media(max-width:600px) {
-
-  #burgers_section {
-    height: fit-content;
-    padding: 3rem 0;
-  }
 
   .burgers_container {
     grid-template-columns: repeat(1, 1fr);
@@ -1249,9 +1249,6 @@ border-radius: .35rem;
 }
 
 @media(max-width: 1250px){
-  .drinks_slider {
-    padding: 3rem 3rem;
-  }
   
   .drinks_item {
     padding: 2rem 1rem;
@@ -1372,7 +1369,7 @@ border-radius: .35rem;
   justify-content: center;
   align-items: center;
   background-color: var(--gray);
-  height: calc(100vh + 10rem);    /*insures that this section will fill the whole screen */
+  height: calc(100vh + 10vw);    /*insures that this section will fill the whole screen */
 }
 
 .maps_text {
@@ -1430,6 +1427,10 @@ border-radius: .35rem;
 
 @media(max-width:1100px) {
 
+  .googleMaps_section {
+    height: 100vh;
+  }
+
   #googleMaps {
     width: 25rem;
     height: 25rem;
@@ -1464,6 +1465,8 @@ border-radius: .35rem;
 
   .googleMaps_section {
     flex-direction: column;
+    height: fit-content;
+    padding: 5rem 0;
   }
 
   .maps_text {
