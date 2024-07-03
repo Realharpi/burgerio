@@ -9,63 +9,6 @@ window.onload = () => {
 };
 
 // SECTION => HEADER
-// SEARCH BAR - Close Icon
-const searchInput = document.getElementById("searchInput");
-const searchClearIcon = document.querySelector(".fa-xmark");
-
-searchInput.addEventListener("input", () => {
-  if (searchInput.value.trim() !== "") {
-    searchClearIcon.classList.add("show");
-  } else {
-    searchClearIcon.classList.remove("show");
-  }
-});
-
-searchClearIcon.addEventListener("click", () => {
-  searchInput.value = "";
-  searchClearIcon.classList.remove("show");
-  searchInput.focus(); // Keep the input focused after clearing
-});
-
-// Search bar typing animation
-document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
-  const baseText = "Search for ";
-  const words = ["Burgers...", "Pizzas..."];
-  let currentWordIndex = 0;
-  let isDeleting = false;
-  let text = words[currentWordIndex];
-  let charIndex = text.length;
-  let delay = 100; // Typing delay
-
-  function type() {
-    if (isDeleting) {
-      if (charIndex > 0) {
-        charIndex--;
-        searchInput.placeholder = baseText + text.substring(0, charIndex);
-      } else {
-        isDeleting = false;
-        currentWordIndex = (currentWordIndex + 1) % words.length;
-        text = words[currentWordIndex];
-        setTimeout(type, 500); // Pause before typing the new word
-        return;
-      }
-    } else {
-      if (charIndex < text.length) {
-        charIndex++;
-        searchInput.placeholder = baseText + text.substring(0, charIndex);
-      } else {
-        isDeleting = true;
-        setTimeout(type, 2000); // Pause before deleting
-        return;
-      }
-    }
-    setTimeout(type, delay);
-  }
-
-  type(); // Initial call
-});
-
 
 // when Hamburger menu is open - No Scroll feature
 const menuButton = document.querySelector(".menu_button"); // Replace with your button selector
@@ -350,7 +293,7 @@ function scrolling_info_iicontainer(event) {
     } else {
       document.getElementById("info_iicontainer").scrollLeft -= scrollspeed_info_iicontainer;        
     }
-    scrollbtn_visible();
+    scrollbtn_visible_info_iicontainer();
     from_scrollpos_info_iicontainer = current_scrollpos_info_iicontainer;
   }
 }
@@ -387,6 +330,7 @@ var previousScroll_info_iicontainer = 0;
 var nextScroll_info_iicontainer = 0;
 function scrollbtn_visible_info_iicontainer() {
   var currentScroll = document.getElementById("info_iicontainer").scrollLeft;      // Get the scroll
+  console.log(currentScroll)
 
   // If we haven't scrolled at all
   if (currentScroll < 1) {
@@ -404,7 +348,7 @@ function scrollbtn_visible_info_iicontainer() {
   }
 
   // When the value of next scroll is increased meaning we are at the end for sure. The next scroll is always 0 but when we reach the end, it goes up 1, 2, 3, 4...
-  if (nextScroll > 3) {
+  if (nextScroll > 3 || currentScroll >= 700) {
     document.getElementById("right_btn_info").style.display = "none";    
   } else if (nextScroll === 0 && window.innerWidth <= 1050) {    // if the next scroll value become 0 again, meaning we are not at the end anymore.
     document.getElementById("right_btn_info").style.display = "block";  
@@ -434,7 +378,7 @@ function scrollRightInfo() {
     left: newScrollPosition,
     behavior: 'smooth',
   });
-  scrollbtn_visible();
+  scrollbtn_visible_info_iicontainer();
 }
 
 // Scrolling the clicking the left buttons
@@ -447,16 +391,16 @@ function scrollLeftInfo() {
     left: newScrollPosition,
     behavior: 'smooth',
   });
-  scrollbtn_visible();
+  scrollbtn_visible_info_iicontainer();
 }
 
 // SECTION => Burgers
 // Select Burgers
 getBurgers = document.querySelectorAll(".burgers_item img");
+
 getBurgers.forEach((eachBurger) => {
   eachBurger.addEventListener("click", (eBurger) => {
     const selectIcon = eachBurger.nextElementSibling;
-
     if (selectIcon.classList.contains("show")) {
       selectIcon.classList.remove("show");
     } else {
