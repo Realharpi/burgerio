@@ -937,7 +937,7 @@ border-radius: .35rem;
   scale: 1.15;
 }
 
-.burger_logo > img {
+.burgers_logo > img {
   position: absolute;
   top: 1.5rem;
   left: 1.5rem;
@@ -976,14 +976,10 @@ border-radius: .35rem;
 
 /* Burger Selected */
 .burgers_item .burgerSelected {
-  display: none;
+  display: block;
   position: absolute;
   top: 1rem;
   right: 1rem;
-}
-
-.burgers_item .burgerSelected.show {
-  display: block;
 }
 
 .burgers_item .burgerSelected img {
@@ -996,7 +992,7 @@ border-radius: .35rem;
     width: 80%;
   }
 
-  .burger_logo > img {
+  .burgers_logo > img {
     width: 15%;
   }
 
@@ -1023,7 +1019,7 @@ border-radius: .35rem;
     width: 95%;
   }
 
-  .burger_logo > img {
+  .burgers_logo > img {
     top: -1rem;
     left: 0;
   }
@@ -1074,7 +1070,7 @@ border-radius: .35rem;
     width: 50%;
   }
 
-  .burger_logo > img {
+  .burgers_logo > img {
     left: 4rem;
   }
 
@@ -1105,7 +1101,7 @@ border-radius: .35rem;
     height: 55vw;
   }
 
-  .burger_logo img {
+  .burgers_logo img {
     top: 3rem;
   }
 

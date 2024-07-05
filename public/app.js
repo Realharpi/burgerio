@@ -32,23 +32,6 @@ menuLinks.forEach((eachLink) => {
   });
 });
 
-
-// SECTION => Burgers
-// Select Burgers
-getBurgers = document.querySelectorAll(".burgers_item img");
-
-getBurgers.forEach((eachBurger) => {
-  eachBurger.addEventListener("click", (eBurger) => {
-    const selectIcon = eachBurger.nextElementSibling;
-    if (selectIcon.classList.contains("show")) {
-      selectIcon.classList.remove("show");
-    } else {
-      selectIcon.classList.add("show");
-    }
-  });
-});
-
-
 // SECTION =>FOOTER
 
 // Automate YEAR in Footer.

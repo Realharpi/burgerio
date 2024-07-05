@@ -1,0 +1,36 @@
+{
+    "burgers": [
+      {
+        "name": "Whopper",
+        "price": 8.49,
+        "image": "images/burgers1.png"
+      },
+      {
+        "name": "Cheese Whopper",
+        "price": 10.49,
+        "image": "images/burgers2.png",
+        "logo": "images/bestseller.png"
+      },
+      {
+        "name": "Double Whopper",
+        "price": 12.49,
+        "image": "images/burgers3.png"
+      },
+      {
+        "name": "Chicken Bacon",
+        "price": 9.99,
+        "image": "images/burgers4.png"
+      },
+      {
+        "name": "Bacon",
+        "price": 8.99,
+        "image": "images/burgers5.png"
+      },
+      {
+        "name": "Fish",
+        "price": 10.49,
+        "image": "images/burgers6.png",
+        "logo": "images/new.png"
+      }
+    ]
+  }

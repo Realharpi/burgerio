@@ -4,7 +4,7 @@ const responsive = () => {
     getViewDiff = (getViewWidth / 16)
     getResult = getViewHeight / getViewDiff
     // console.log(getViewWidth)            This is for testing purpose only.
-    console.log(getResult)               //This is for testing purpose only.
+    // console.log(getResult)               //This is for testing purpose only.
     // 8 is my monitor. 7.7 is my laptop. 7.2 is with bookmark. 
     burgersSection = document.getElementById("burgers_section")
     drinksSection = document.getElementById("drinks_section")
